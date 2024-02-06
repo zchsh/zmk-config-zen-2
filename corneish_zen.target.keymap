@@ -1,0 +1,58 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+
+/ {
+  chosen {
+    zmk,matrix_transform = &default_transform;
+    //zmk,matrix_transform = &five_column_transform;
+  };
+};
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+                default_layer {
+                        label = "QWERTY";
+                        bindings = <
+   &kp ESC      &kp Q        &kp W        &kp E        &kp R        &kp T           &kp Y        &kp U        &kp I        &kp O        &kp P        &kp BSPC
+   &kp TAB      &kp A        &kp S        &kp D        &kp F        &kp G           &kp H        &kp J        &kp K        &kp L        &kp SEMI     &kp RET
+   &kp LSHFT    &kp Z        &kp X        &kp C        &kp V        &kp B           &kp N        &kp M        &kp COMMA    &kp DOT      &kp FSLH     &kp RSHFT
+                                          &kp LCTRL    &kp LALT     &kp LGUI        &mo 2        &lt 1 SPACE  &kp LS(LC(LA(LGUI)))
+                        >;
+                };
+                lower_layer {
+                        label = "NAV";
+                        bindings = <
+   &trans       &none        &kp C_PREV   &kp C_NEXT   &kp C_PP     &kp C_BRI_UP    &kp C_VOL_UP &none        &kp UP       &none        &none        &trans
+   &trans       &none        &none        &none        &none        &kp C_BRI_DN    &kp C_VOL_DN &kp LEFT     &kp DOWN     &kp RIGHT    &none        &trans
+   &trans       &none        &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR      &kp C_MUTE   &none        &none        &none        &none        &trans
+                          	          &trans       &trans       &trans          &trans       &trans       &kp SPACE
+                        >;
+                };
+                raise_layer {
+                        label = "SYMBOL";
+                        bindings = <
+   &trans       &kp N1       &kp N2       &kp N3       &kp N4       &kp N5          &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &trans
+   &trans       &kp GRAVE    &none        &kp LBKT     &kp RBKT     &none           &none        &kp MINUS    &kp EQUAL    &kp BSLH     &kp APOS     &trans
+   &trans       &none        &none        &none        &none        &none           &none        &none        &none        &none        &none        &trans
+                                          &trans       &trans       &trans          &trans       &trans       &trans
+                        >;
+                };
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+// NOTE: reset layer's only purpose is to have &reset somewhere on the keymap, otherwise &lt won't work.
+// NOTE: this issue is documented in LowPro Discord chatter rather than on GitHub.
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------
+                unused_reset_layer {
+                        label = "RESET";
+                        bindings = <
+   &reset &none &none &none  &none  &none     &none  &none  &none &none &none &trans
+   &trans &none &none &none  &none  &none     &none  &none  &none &none &none &trans
+   &trans &none &none &none  &none  &none     &none  &none  &none &none &none &trans
+                      &trans &trans &trans    &trans &trans &trans
+                        >;
+                };
+        };
+};
