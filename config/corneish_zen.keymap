@@ -63,7 +63,7 @@
                 unused_reset_layer {
                         label = "RESET";
                         bindings = <
-   &reset &none &none &none  &none  &none     &none  &none  &none &none &none &trans
+   &sys_reset &none &none &none  &none  &none     &none  &none  &none &none &none &trans
    &trans &none &none &none  &none  &none     &none  &none  &none &none &none &trans
    &trans &none &none &none  &none  &none     &none  &none  &none &none &none &trans
                       &trans &trans &trans    &trans &trans &trans
