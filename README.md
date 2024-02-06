@@ -26,7 +26,7 @@ V2 PCBs were only used in the 3rd GB round (R3). To confirm which version you ne
 4. Commit and push your changes to your personal repo. Upon pushing it, GitHub Actions will start building a new version of your firmware with the updated keymap.
 
 > **Note**
-> 
+>
 > After forking the repo to your own account, you can also edit the files directly using the GitHub web interface via the edit button on the top right (keyboard shortcut `e`) or via the [GitHub Dev](https://github.com/github/dev) interface (keyboard shortcut `.`) and commit your changes.
 
 ## Firmware Files
@@ -43,3 +43,7 @@ To locate your firmware files...
     - If you changed [the conf file](/config/corneish_zen.conf) you should flash both sides their respective files.
 
 Your keyboard is now ready to use.
+
+## Keymap guide for zchsh's custom `corne-ish_zen.keymap`
+
+![Visual cheat sheet for the keymap in config/corne-ish_zen.keymap](KEYMAP_GUIDE.png)
